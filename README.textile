@@ -1,0 +1,59 @@
+h1. Ez Texting Rest Gem
+
+0.1.0
+
+This gem is designed to make the Ez Texting SMS text messaging REST API's as easy to use as possible. They allow for use of all of what the API offers in a 
+very easy and clear fashion.
+
+h2. Dependencies
+
+This gem relies on HTTParty for making its requests. That is the only runtime dependency. The testing uses rspec. The documentation
+is written to be viewed with YARD.
+
+h2. API Calls Available
+The following calls are available, along with the corresponding classes to use them
+
+* SMS (Eztexting::Sms)
+* Credit Purchase and Balance Check (Eztexting::Credits)
+* Keyword Check and Configuration (Eztexting::Keyword)
+* Carrier Lookups (Eztexting::Lookup)
+* Voice Broadcast (Eztexting::Broadcast)
+  
+h2. How To Use / How The Gem Is Setup
+
+Call the connect method on the EztextingRest module. Once that's done then your credentials are cached and you 
+can use any of the classes to interact with Ez Texting's API's. 
+
+**All API calls require your username and password** which is why you call 
+the connect method and cache them. By doing this you enter your credentials once and then they are merged with the options for the API call you 
+want to make. This reduces friction when interacting with the Ez Texting API - as there is no state or authentication and the credentials 
+must be passed along through every request.
+
+
+h2. Examples
+
+<notextile><pre>
+  
+# Setup the connection for making requests.
+EztextingRest.connect!('username','password')
+# => "credentials cached"  
+  
+# Make a hash with the required keys of subject, message and phonenumber
+# and then send out the SMS. It's that simple. 3 lines, 2 if you condense the creation of the Hash into the Method call.
+# The response will be an array: the first element will be the response mapped from the code to the literal that the Ez Texting
+# documentation lists; rhe second element will be the raw value. In some cases this bit is important - in the credit balance
+# check this would be the number of credits. 
+options = {
+  'PhoneNumbers[1]'=>'5551239988', 
+  'Subject'=>'Check it out', 
+  'Message'=>'I am making an awesome application with this api!'
+}
+Eztexting::Sms.single(options)
+# => [201, "Success - A new message has been scheduled for delivery"...]
+
+# Check If A Keyword Is Available
+Eztexting::Availablity.check("my_keyowrd_to_check")
+# => [200, "Success - The Keyword is available"....]
+
+
+</pre></notextile>

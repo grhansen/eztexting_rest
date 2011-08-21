@@ -1,0 +1,40 @@
+Carrier Lookup Account Issues
+The Ez Texting service has a slight caveat for usage of the carrier lookup command. Unfortunately the account system is setup so that 
+you must have one account for the Carrier lookup API command and another for all other commands. To use this gem with respect to this
+issue you need to swap the accounts (calling the EztextingRest.connect! method) when using the carrier lookup command and then swap 
+if back to your account for the rest of the API when you use those commands
+
+Example
+---------------------------------------------------------
+1) Cache your credentials for your account for the API 
+
+# Account for API usage (except carrier lookup)
+EztextingRest.connect!(username_for_api_without_carrier,password)
+# => "credentials cached"  
+
+2) Use as you wish for all commands except the carrier lookup
+options = {
+  'PhoneNumbers[1]'=>'5551239988', 
+  'Subject'=>'Check it out', 
+  'Message'=>'I am making an awesome application with this api!'
+}
+EztextingRest::Sms.single(options)
+# => [201, "Success - A new message has been scheduled for delivery", "<?xm.....]
+
+EztextingRest::Availability.check("games")
+# => [200, "Success - The Keyword is available", "<?xml version=\"1.0\" e......]
+
+3) Swap your credentials by calling the connect! method again with the different account information
+
+EztextingRest.connect!(carrier_lookup_enabled_account,password)
+# => "credentials cached
+
+
+4) Call the lookup command as much as you need
+EztextingRest::Lookup.carrier(5555555555)
+
+
+5) When you need to use any of the other API commands change your cached credentials back to the account for the rest of the API
+EztextingRest.connect!(username_for_api_without_carrier,password)
+# => "credentials cached"  
+
