@@ -11,7 +11,7 @@ module EztextingRest
     def self.single(opts={})
       location = "/sending/messages"
       
-      return post(location,opts)
+      processed_response = post(location,opts)
     end
     
     # Send Out Multiple Messages

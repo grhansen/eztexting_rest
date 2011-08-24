@@ -6,7 +6,7 @@ module EztextingRest
       location = "/sending/phone-numbers/phone-number"
       options  = {'phonenumber' => phone_number}  
       
-      return get(location,options)
+      processed_response = get(location,options)
     end
     
   end

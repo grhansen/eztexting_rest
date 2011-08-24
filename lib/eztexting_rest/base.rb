@@ -29,8 +29,6 @@ module EztextingRest
       
       private
     
-    
-      # Return format defaults to xml
       def post_request_options(options)
         fields = []
         options.merge!(EztextingRest.credentials)
@@ -54,19 +52,9 @@ module EztextingRest
         status = doc.xpath("//Status").text
         code   = doc.xpath("//Code").text.to_i
 
-        return [code,response_code_to_string(code),response]
+        return [code,status,response]
       end
-    
-      def response_code_to_string(code)
-        case code
-        when 201 then "Success - A new message has been scheduled for delivery"
-        when 401 then "Unauthorized - Authentication credentials are missing or incorrect"
-        when 403 then "Forbidden - Request is not valid. An accompanying error message explains why."
-        when 500 then "Internal Server Error - Something is broken. Please create a support ticket."
-        end
-      end
-      
-      
+     
     end
   end
 end
