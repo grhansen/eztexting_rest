@@ -3,9 +3,9 @@ require 'rake'
 require 'echoe'  
 require 'yard'
   
-Echoe.new('eztexting_rest', '0.1.0') do |p|  
+Echoe.new('eztexting_rest', '0.1.1') do |p|  
   p.description     = "Access The New EzTexting REST APIs"  
-  p.url             = "http://github.com/EzTexting/eztextingrest"  
+  p.url             = "http://github.com/EzTexting/eztexting_rest"  
   p.author          = "David Malin"  
   p.email           = "dmalin@eztexting.com"  
   p.ignore_pattern  = ["tmp/*", "script/*"]  
