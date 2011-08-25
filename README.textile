@@ -1,6 +1,6 @@
 h1. Ez Texting Rest Gem
 
-0.1.0
+Experimental / Unsupported
 
 This gem is designed to make the Ez Texting SMS text messaging REST API's as easy to use as possible. They allow for use of all of what the API offers in a 
 very easy and clear fashion.
