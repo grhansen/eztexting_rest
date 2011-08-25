@@ -22,7 +22,7 @@ module EztextingRest
         options    = options.merge!('_method' => 'DELETE')
         parameters = post_request_options(options)
         url        = EztextingRest.base_uri + uri + "?" + parameters
-        response   = Curl::Easy.perform(url)
+        response   = Curl::Easy.http_post(url)
       
         return process(response.body_str)
       end
