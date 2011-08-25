@@ -59,7 +59,7 @@ module EztextingRest
     
     # Cancel A Keyword
     # opts - The keyword in question to be deleted
-    def self.cancel
+    def self.cancel(keyword)
       location   = "/keywords/#{keyword}"
       
       processed_response = delete(location,{})     
