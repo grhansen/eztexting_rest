@@ -43,7 +43,7 @@ module EztextingRest
     # Configure A Keyword
     # opts - This is a hash of options to configure the keywords
     def self.configure
-      location = "/keywords/keyword"
+      location = "/keywords/#{opts[:keyword]}"
       options = {
         'Keyword'           => opts[:keyword],
         'EnableDoubleOptIn' => opts[:enable_double_optin],
@@ -60,10 +60,9 @@ module EztextingRest
     # Cancel A Keyword
     # opts - The keyword in question to be deleted
     def self.cancel
-      location   = "/keywords/keyword"
-      parameters = {"Keyword" => keyword}
+      location   = "/keywords/#{keyword}"
       
-      processed_response = delete(location,parameters)     
+      processed_response = delete(location,{})     
     end
     
   end

@@ -2,16 +2,16 @@
 
 Gem::Specification.new do |s|
   s.name = %q{eztexting_rest}
-  s.version = "0.1.0"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{David Malin}]
-  s.date = %q{2011-08-21}
+  s.date = %q{2011-08-25}
   s.description = %q{Access The New EzTexting REST APIs}
   s.email = %q{dmalin@eztexting.com}
-  s.extra_rdoc_files = [%q{LICENSE}, %q{README.textile}, %q{lib/eztexting_rest.rb}, %q{lib/eztexting_rest/availablity.rb}, %q{lib/eztexting_rest/base.rb}, %q{lib/eztexting_rest/credits.rb}, %q{lib/eztexting_rest/keywords.rb}, %q{lib/eztexting_rest/lookup.rb}, %q{lib/eztexting_rest/sms.rb}, %q{lib/eztexting_rest/voice.rb}]
-  s.files = [%q{LICENSE}, %q{Manifest}, %q{README.textile}, %q{RELEASE_NOTES}, %q{Rakefile}, %q{VERSION}, %q{examples/example_script.rb}, %q{eztexting_rest.gemspec}, %q{lib/eztexting_rest.rb}, %q{lib/eztexting_rest/availablity.rb}, %q{lib/eztexting_rest/base.rb}, %q{lib/eztexting_rest/credits.rb}, %q{lib/eztexting_rest/keywords.rb}, %q{lib/eztexting_rest/lookup.rb}, %q{lib/eztexting_rest/sms.rb}, %q{lib/eztexting_rest/voice.rb}]
-  s.homepage = %q{http://github.com/EzTexting/eztextingrest}
+  s.extra_rdoc_files = [%q{LICENSE}, %q{README.textile}, %q{lib/eztexting_rest.rb}, %q{lib/eztexting_rest/base.rb}, %q{lib/eztexting_rest/credits.rb}, %q{lib/eztexting_rest/keywords.rb}, %q{lib/eztexting_rest/lookup.rb}, %q{lib/eztexting_rest/sms.rb}, %q{lib/eztexting_rest/voice.rb}]
+  s.files = [%q{LICENSE}, %q{Manifest}, %q{README.textile}, %q{RELEASE_NOTES}, %q{Rakefile}, %q{VERSION}, %q{examples/example_script.rb}, %q{eztexting_rest.gemspec}, %q{lib/eztexting_rest.rb}, %q{lib/eztexting_rest/base.rb}, %q{lib/eztexting_rest/credits.rb}, %q{lib/eztexting_rest/keywords.rb}, %q{lib/eztexting_rest/lookup.rb}, %q{lib/eztexting_rest/sms.rb}, %q{lib/eztexting_rest/voice.rb}]
+  s.homepage = %q{http://github.com/EzTexting/eztexting_rest}
   s.rdoc_options = [%q{--line-numbers}, %q{--inline-source}, %q{--title}, %q{Eztexting_rest}, %q{--main}, %q{README.textile}]
   s.require_paths = [%q{lib}]
   s.rubyforge_project = %q{eztexting_rest}

@@ -3,7 +3,7 @@ require 'rake'
 require 'echoe'  
 require 'yard'
   
-Echoe.new('eztexting_rest', '0.1.1') do |p|  
+Echoe.new('eztexting_rest', '0.1.3') do |p|  
   p.description     = "Access The New EzTexting REST APIs"  
   p.url             = "http://github.com/EzTexting/eztexting_rest"  
   p.author          = "David Malin"  
