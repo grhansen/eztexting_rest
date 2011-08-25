@@ -45,7 +45,6 @@ module EztextingRest
     def self.configure(opts={})
       location = "/keywords/#{opts[:keyword]}"
       options = {
-        'Keyword'           => opts[:keyword],
         'EnableDoubleOptIn' => opts[:enable_double_optin],
         'ConfirmMessage'    => opts[:confirm_message],
         'JoinMessage'       => opts[:join_message],
