@@ -42,7 +42,7 @@ module EztextingRest
     
     # Configure A Keyword
     # opts - This is a hash of options to configure the keywords
-    def self.configure
+    def self.configure(opts={})
       location = "/keywords/#{opts[:keyword]}"
       options = {
         'Keyword'           => opts[:keyword],
