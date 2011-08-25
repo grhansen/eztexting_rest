@@ -34,7 +34,7 @@ module EztextingRest
         'Number'           => opts[:number], 
         'SecurityCode'     => opts[:security_code], 
         'ExpirationMonth'  => opts[:expiration_month],
-        'ExpirationYear'   => => opts[:expiration_year]
+        'ExpirationYear'   => opts[:expiration_year]
       }
       
       processed_response = post(location,options)
