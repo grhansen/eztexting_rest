@@ -5,6 +5,7 @@ RELEASE_NOTES
 Rakefile
 VERSION
 examples/example_script.rb
+eztexting_rest.gemspec
 lib/eztexting_rest.rb
 lib/eztexting_rest/base.rb
 lib/eztexting_rest/credits.rb
@@ -12,3 +13,4 @@ lib/eztexting_rest/keywords.rb
 lib/eztexting_rest/lookup.rb
 lib/eztexting_rest/sms.rb
 lib/eztexting_rest/voice.rb
+test/eztexting_rest_test.rb
