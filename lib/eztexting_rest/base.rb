@@ -21,7 +21,7 @@ module EztextingRest
       def delete(uri,options)
         options    = options.merge!('_method' => 'DELETE')
         parameters = post_request_options(options)
-        url        = EztextingRest.base_uri + uri + "?" + parameters
+        url        = EztextingRest.base_uri + uri 
         response   = Curl::Easy.http_post(url)
       
         return process(response.body_str)

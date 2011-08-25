@@ -6,11 +6,12 @@ module EztextingRest
       location = "/voicemessages/"
       
       options = {
-        'phonenumbers' => phone_numbers,
-        'soundsource' => opts[:recording],
-        'callerid' => opts[:called_id]
+        'phonenumbers' => opts[:numbers],
+        'soundsource'  => opts[:recording],
+        'callerid'     => opts[:caller_id],
+        'soundfile'    => opts[:soundfile]
       }
-      
+      puts options.inspect
       processed_response = post(location,options)
     end
     
