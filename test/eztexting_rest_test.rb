@@ -92,7 +92,7 @@ class EztextingRestTest < ActiveSupport::TestCase
   end
   
   test 'EztextingRest::Voice#broadcaset should post to /voicemessages' do
-    opts = {:numbers => "3213213124", :soundfile => "location_of_file", :srecording => "src", :caller_id => '21232121212'}
+    opts = {:numbers => "3213213124", :soundfile => "location_of_file", :recording => "src", :caller_id => '21232121212'}
     EztextingRest::Voice.broadcast(opts)
     assert_requested :post, "https://app.eztexting.com/voicemessages/"
   end

@@ -51,7 +51,6 @@ options = {
 Eztexting::Sms.single(options)
 # => [201, "Success" "<xml>.....</xml>"]
 
-
 multiple_messages = [
   { 'PhoneNumbers[]'=>'5551239988', 'Subject'=>'Check it out', 'Message'=>'I am making an awesome application with this api!'},
   { 'PhoneNumbers[]'=>'5551239988', 'Subject'=>'Another message', 'Message'=>'Important. This is boring.'}
@@ -61,7 +60,7 @@ EztextingRest::Sms.Multi(multiple_messages)
 # => [200, "Success","<xml>.....</xml>"]
 
 # Check If A Keyword Is Available
-Eztexting::Availablity.check("my_keyowrd_to_check")
+Eztexting::Keywords.check("my_keyowrd_to_check")
 # => [200, "Success","<xml>.....</xml>"]
 
 
