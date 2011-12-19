@@ -82,6 +82,12 @@ class EztextingRestTest < ActiveSupport::TestCase
     assert_requested :post, "https://app.eztexting.com/sending/messages"
   end
   
+  test 'EztextingRest::Sms#single should post with multiple phone numbers' do
+    opts = { 'PhoneNumbers[]'=>['5551239988','5551239989'], 'Subject'=>'Multiple Phone Numbers', 'Message'=>'I am making an awesome application with this api!'}
+    EztextingRest::Sms.single(opts)
+    assert_requested :post, "https://app.eztexting.com/sending/messages", opts
+  end
+
   test 'EztextingRest::Sms#multi should post to /sending/messages TWICE' do
     opts = [
       { 'PhoneNumbers[]'=>'5551239988', 'Subject'=>'Check it out', 'Message'=>'I am making an awesome application with this api!'},

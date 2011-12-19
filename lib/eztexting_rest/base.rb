@@ -34,7 +34,9 @@ module EztextingRest
         options.merge!(EztextingRest.credentials)
         options.merge!({"format" => 'xml'})
         options.each_pair do |field,value|
-          fields << Curl::PostField.content(field,value)
+          Array(value).each do |v|
+            fields << Curl::PostField.content(field,v)
+          end
         end
       
         fields
